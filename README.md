@@ -1,6 +1,6 @@
-# iil.gmbh — Relaunch
+# iil.ai — Relaunch
 
-Modern landing page for IIL GmbH (Institut für Informationslogistik).
+Modern landing page for IIL (Institut für Informationslogistik) at iil.ai.
 
 ## Stack
 
@@ -14,7 +14,7 @@ Modern landing page for IIL GmbH (Institut für Informationslogistik).
 .
 ├── index.html              # Main landing page
 ├── nginx/
-│   └── iil.gmbh.conf       # Nginx server config
+│   └── iil.ai.conf         # Nginx server config
 └── .github/
     └── workflows/
         └── deploy.yml      # CI/CD: push main → auto-deploy
@@ -35,16 +35,16 @@ Modern landing page for IIL GmbH (Institut für Informationslogistik).
 
 ```bash
 # On Hetzner server (as root or with sudo)
-mkdir -p /opt/iil-gmbh/public
-chown deploy:deploy /opt/iil-gmbh
+mkdir -p /opt/iil-ai/public
+chown deploy:deploy /opt/iil-ai
 
 # Copy Nginx config
-cp nginx/iil.gmbh.conf /etc/nginx/sites-available/iil.gmbh
-ln -s /etc/nginx/sites-available/iil.gmbh /etc/nginx/sites-enabled/
+cp nginx/iil.ai.conf /etc/nginx/sites-available/iil.ai
+ln -s /etc/nginx/sites-available/iil.ai /etc/nginx/sites-enabled/
 nginx -t && systemctl reload nginx
 
 # SSL via Certbot
-certbot --nginx -d iil.gmbh -d www.iil.gmbh
+certbot --nginx -d iil.ai -d www.iil.ai
 ```
 
 ### GitHub Secrets required
@@ -57,4 +57,4 @@ certbot --nginx -d iil.gmbh -d www.iil.gmbh
 
 ### DNS
 
-Point `iil.gmbh` and `www.iil.gmbh` A-records to `88.198.191.108`.
+Point `iil.ai` and `www.iil.ai` A-records to `88.198.191.108`.

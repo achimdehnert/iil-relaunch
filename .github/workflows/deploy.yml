@@ -1,4 +1,4 @@
-name: Deploy iil.gmbh
+name: Deploy iil.ai
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
           script: |
             set -euo pipefail
 
-            DEPLOY_DIR=/opt/iil-gmbh
+            DEPLOY_DIR=/opt/iil-ai
             PUBLIC_DIR=$DEPLOY_DIR/public
             REPO_URL=https://github.com/achimdehnert/iil-relaunch.git
 
@@ -44,9 +44,9 @@ jobs:
 
             # Reload nginx
             sudo nginx -t && sudo systemctl reload nginx
-            echo "✅ iil.gmbh deployed at $(date)"
+            echo "✅ iil.ai deployed at $(date)"
 
       - name: Health check
         run: |
           sleep 5
-          curl -f https://iil.gmbh/healthz || echo "⚠️ Health check failed (DNS may not be switched yet)"
+          curl -f https://iil.ai/healthz || echo "⚠️ Health check failed (DNS may not be switched yet)"
