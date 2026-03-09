@@ -1,0 +1,83 @@
+[
+  {
+    "name": "Schutztat – Arbeitssicherheit",
+    "url": "https://schutztat.iil.pet",
+    "desc": "KI-gestützte Plattform für Gefährdungsbeurteilungen, Hazard-Analyse und Maßnahmen-Tracking. Multi-Tenant SaaS.",
+    "icon": "shield",
+    "color": { "bg": "rgba(249,115,22,0.12)", "fg": "#f97316" },
+    "tags": ["Risk SaaS", "Odoo 18"],
+    "status": "dev"
+  },
+  {
+    "name": "BF Agent – Book Factory",
+    "url": "https://bfagent.iil.pet",
+    "desc": "AI-gestütztes Projektmanagement für kreatives Schreiben, World-Building und Publishing-Workflows.",
+    "icon": "book",
+    "color": { "bg": "rgba(168,85,247,0.12)", "fg": "#a855f7" },
+    "tags": ["AI Agent", "Creative"],
+    "status": "dev"
+  },
+  {
+    "name": "DriftTales – Travel Stories",
+    "url": "https://drifttales.app",
+    "desc": "KI-generierte Reisegeschichten mit Smart Location Enrichment und dreistufiger Story-Pipeline.",
+    "icon": "plane",
+    "color": { "bg": "rgba(6,182,212,0.12)", "fg": "#06b6d4" },
+    "tags": ["Travel", "Gen AI"],
+    "status": "dev"
+  },
+  {
+    "name": "Weltenforger",
+    "url": "https://weltenforger.com",
+    "desc": "Story-Universe-Plattform für World-Building, Location Research und narratives Design vernetzter Fiktionen.",
+    "icon": "globe",
+    "color": { "bg": "rgba(236,72,153,0.12)", "fg": "#ec4899" },
+    "tags": ["Creative", "Narrative AI"],
+    "status": "dev"
+  },
+  {
+    "name": "Prezimo – Presentation AI",
+    "url": "https://prezimo.de",
+    "desc": "KI-gestütztes Präsentationsstudio: automatische PPTX-Generierung mit Templates und Brand Consistency.",
+    "icon": "chart",
+    "color": { "bg": "rgba(245,158,11,0.12)", "fg": "#f59e0b" },
+    "tags": ["PPTX", "Gen AI"],
+    "status": "dev"
+  },
+  {
+    "name": "Bieterpilot – Ausschreibungen",
+    "url": "https://bieterpilot.de",
+    "desc": "KI-Assistent für öffentliche Ausschreibungen — Erkennung, Bewertung und automatisierte Angebotsvorbereitung.",
+    "icon": "clipboard",
+    "color": { "bg": "rgba(34,197,94,0.12)", "fg": "#22c55e" },
+    "tags": ["Procurement", "AI"],
+    "status": "dev"
+  },
+  {
+    "name": "nl2cad – AI Konstruktion",
+    "url": "https://nl2cad.de",
+    "desc": "Natural Language to CAD: Freitext-Beschreibungen werden automatisch in parametrische CAD-Modelle konvertiert.",
+    "icon": "cog",
+    "color": { "bg": "rgba(59,130,246,0.12)", "fg": "#3b82f6" },
+    "tags": ["CAD", "NLP"],
+    "status": "dev"
+  },
+  {
+    "name": "Trading Hub",
+    "url": "https://trading-hub.iil.pet",
+    "desc": "Algorithmische Handelssignale, Portfolio-Analyse und Marktdaten-Aggregation mit KI-Vorhersagemodellen.",
+    "icon": "trending",
+    "color": { "bg": "rgba(34,197,94,0.12)", "fg": "#22c55e" },
+    "tags": ["Finance", "AI"],
+    "status": "dev"
+  },
+  {
+    "name": "Research Hub",
+    "url": "https://research.iil.pet",
+    "desc": "KI-gestützte Literaturrecherche: automatisches Crawling akademischer Quellen, Synthese und Zitatformatierung.",
+    "icon": "beaker",
+    "color": { "bg": "rgba(139,92,246,0.12)", "fg": "#8b5cf6" },
+    "tags": ["Research", "RAG"],
+    "status": "dev"
+  }
+]
