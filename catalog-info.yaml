@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: iil-relaunch
+  description: IIL corporate website relaunch (iil.gmbh)
+  tags: [website, relaunch, corporate]
+  annotations:
+    github.com/project-slug: achimdehnert/iil-relaunch
+spec:
+  type: website
+  lifecycle: active
+  owner: achimdehnert
+  system: corporate
+  domain: business
+  providesApis: []
+  dependsOn: []
