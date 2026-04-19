@@ -1,83 +1,310 @@
 [
   {
     "name": "Schutztat – Arbeitssicherheit",
-    "url": "https://schutztat.iil.pet",
+    "repo": "risk-hub",
     "desc": "KI-gestützte Plattform für Gefährdungsbeurteilungen, Hazard-Analyse und Maßnahmen-Tracking. Multi-Tenant SaaS.",
     "icon": "shield",
     "color": { "bg": "rgba(249,115,22,0.12)", "fg": "#f97316" },
     "tags": ["Risk SaaS", "Odoo 18"],
-    "status": "dev"
+    "status": "beta",
+    "urls": {
+      "prod": "https://schutztat.de",
+      "staging": "https://staging.schutztat.de",
+      "dev": "http://localhost:8090"
+    }
   },
   {
     "name": "BF Agent – Book Factory",
-    "url": "https://bfagent.iil.pet",
+    "repo": "bfagent",
     "desc": "AI-gestütztes Projektmanagement für kreatives Schreiben, World-Building und Publishing-Workflows.",
     "icon": "book",
     "color": { "bg": "rgba(168,85,247,0.12)", "fg": "#a855f7" },
     "tags": ["AI Agent", "Creative"],
-    "status": "dev"
+    "status": "beta",
+    "urls": {
+      "prod": "https://bfagent.iil.pet",
+      "staging": "https://staging.iil.pet",
+      "dev": "http://localhost:8091"
+    }
   },
   {
     "name": "DriftTales – Travel Stories",
-    "url": "https://drifttales.app",
+    "repo": "travel-beat",
     "desc": "KI-generierte Reisegeschichten mit Smart Location Enrichment und dreistufiger Story-Pipeline.",
     "icon": "plane",
     "color": { "bg": "rgba(6,182,212,0.12)", "fg": "#06b6d4" },
     "tags": ["Travel", "Gen AI"],
-    "status": "dev"
+    "status": "beta",
+    "urls": {
+      "prod": "https://drifttales.com",
+      "staging": "https://staging.drifttales.com",
+      "dev": "http://localhost:8089"
+    }
   },
   {
     "name": "Weltenforger",
-    "url": "https://weltenforger.com",
+    "repo": "weltenhub",
     "desc": "Story-Universe-Plattform für World-Building, Location Research und narratives Design vernetzter Fiktionen.",
     "icon": "globe",
     "color": { "bg": "rgba(236,72,153,0.12)", "fg": "#ec4899" },
     "tags": ["Creative", "Narrative AI"],
-    "status": "dev"
+    "status": "beta",
+    "urls": {
+      "prod": "https://weltenforger.com",
+      "staging": "https://staging.weltenforger.com",
+      "dev": "http://localhost:8081"
+    }
   },
   {
     "name": "Prezimo – Presentation AI",
-    "url": "https://prezimo.de",
+    "repo": "pptx-hub",
     "desc": "KI-gestütztes Präsentationsstudio: automatische PPTX-Generierung mit Templates und Brand Consistency.",
     "icon": "chart",
     "color": { "bg": "rgba(245,158,11,0.12)", "fg": "#f59e0b" },
     "tags": ["PPTX", "Gen AI"],
-    "status": "dev"
+    "status": "beta",
+    "urls": {
+      "prod": "https://prezimo.de",
+      "staging": "https://staging.prezimo.de",
+      "dev": "http://localhost:8020"
+    }
   },
   {
     "name": "Bieterpilot – Ausschreibungen",
-    "url": "https://bieterpilot.de",
+    "repo": "ausschreibungs-hub",
     "desc": "KI-Assistent für öffentliche Ausschreibungen — Erkennung, Bewertung und automatisierte Angebotsvorbereitung.",
     "icon": "clipboard",
     "color": { "bg": "rgba(34,197,94,0.12)", "fg": "#22c55e" },
     "tags": ["Procurement", "AI"],
-    "status": "dev"
+    "status": "beta",
+    "urls": {
+      "prod": "https://bieterpilot.de",
+      "staging": "https://staging.bieterpilot.de",
+      "dev": "http://localhost:8101"
+    }
   },
   {
     "name": "nl2cad – AI Konstruktion",
-    "url": "https://nl2cad.de",
+    "repo": "cad-hub",
     "desc": "Natural Language to CAD: Freitext-Beschreibungen werden automatisch in parametrische CAD-Modelle konvertiert.",
     "icon": "cog",
     "color": { "bg": "rgba(59,130,246,0.12)", "fg": "#3b82f6" },
     "tags": ["CAD", "NLP"],
-    "status": "dev"
+    "status": "beta",
+    "urls": {
+      "prod": "https://nl2cad.de",
+      "staging": "https://staging.nl2cad.de",
+      "dev": "http://localhost:8094"
+    }
   },
   {
     "name": "Trading Hub",
-    "url": "https://trading-hub.iil.pet",
+    "repo": "trading-hub",
     "desc": "Algorithmische Handelssignale, Portfolio-Analyse und Marktdaten-Aggregation mit KI-Vorhersagemodellen.",
     "icon": "trending",
     "color": { "bg": "rgba(34,197,94,0.12)", "fg": "#22c55e" },
     "tags": ["Finance", "AI"],
-    "status": "dev"
+    "status": "beta",
+    "urls": {
+      "prod": "https://trading-hub.iil.pet",
+      "staging": "https://staging.ai-trades.de",
+      "dev": "http://localhost:8088"
+    }
   },
   {
     "name": "Research Hub",
-    "url": "https://research.iil.pet",
+    "repo": "research-hub",
     "desc": "KI-gestützte Literaturrecherche: automatisches Crawling akademischer Quellen, Synthese und Zitatformatierung.",
     "icon": "beaker",
     "color": { "bg": "rgba(139,92,246,0.12)", "fg": "#8b5cf6" },
     "tags": ["Research", "RAG"],
-    "status": "dev"
+    "status": "beta",
+    "urls": {
+      "prod": "https://research.iil.pet",
+      "staging": "https://staging-research.iil.pet",
+      "dev": "http://localhost:8098"
+    }
+  },
+  {
+    "name": "Writing Hub",
+    "repo": "writing-hub",
+    "desc": "KI-gestütztes Autorenwerkzeug: Projekte, Templates, Research-Summaries und Zitat-Management.",
+    "icon": "pen",
+    "color": { "bg": "rgba(244,114,182,0.12)", "fg": "#f472b6" },
+    "tags": ["Creative", "Writing"],
+    "status": "beta",
+    "urls": {
+      "prod": "https://writing.iil.pet",
+      "staging": "https://staging-writing.iil.pet",
+      "dev": "http://localhost:8097"
+    }
+  },
+  {
+    "name": "KI ohne Risiko – Coaching",
+    "repo": "coach-hub",
+    "desc": "KI-Coaching-Plattform für Unternehmen: Workshops, Strategieberatung und Transformationsbegleitung.",
+    "icon": "brain",
+    "color": { "bg": "rgba(251,191,36,0.12)", "fg": "#fbbf24" },
+    "tags": ["Coaching", "KI-Strategie"],
+    "status": "beta",
+    "urls": {
+      "prod": "https://kiohnerisiko.de",
+      "staging": "https://staging-coaching.iil.pet",
+      "dev": "http://localhost:8007"
+    }
+  },
+  {
+    "name": "137herz – Lebensberatung",
+    "repo": "137-hub",
+    "desc": "Numerologie und spirituelle Lebensberatung mit KI-gestützter Analyse und personalisierten Empfehlungen.",
+    "icon": "heart",
+    "color": { "bg": "rgba(244,63,94,0.12)", "fg": "#f43f5e" },
+    "tags": ["Coaching", "Numerologie"],
+    "status": "beta",
+    "urls": {
+      "prod": "https://137herz.ai",
+      "staging": "https://staging.137herz.ai",
+      "dev": "http://localhost:8095"
+    }
+  },
+  {
+    "name": "Billing Hub",
+    "repo": "billing-hub",
+    "desc": "Rechnungsstellung, Abo-Management und Payment-Integration für die IIL-Plattform.",
+    "icon": "dollar",
+    "color": { "bg": "rgba(16,185,129,0.12)", "fg": "#10b981" },
+    "tags": ["Billing", "SaaS"],
+    "status": "dev",
+    "urls": {
+      "prod": "https://billing.iil.pet",
+      "staging": "https://staging-billing.iil.pet",
+      "dev": "http://localhost:8092"
+    }
+  },
+  {
+    "name": "Wedding Hub",
+    "repo": "wedding-hub",
+    "desc": "Hochzeitsplanung mit KI: Gästelisten, Budgetplanung, Lieferanten-Matching und Timeline-Management.",
+    "icon": "heart",
+    "color": { "bg": "rgba(251,113,133,0.12)", "fg": "#fb7185" },
+    "tags": ["Events", "Planning"],
+    "status": "dev",
+    "urls": {
+      "prod": "https://wedding-hub.iil.pet",
+      "staging": "https://staging-wedding.iil.pet",
+      "dev": "http://localhost:8093"
+    }
+  },
+  {
+    "name": "Illustration Hub",
+    "repo": "illustration-hub",
+    "desc": "KI-Bildgenerierung und Illustration-Pipeline für Publishing und Marketing-Assets.",
+    "icon": "palette",
+    "color": { "bg": "rgba(217,70,239,0.12)", "fg": "#d946ef" },
+    "tags": ["GenAI", "Images"],
+    "status": "dev",
+    "urls": {
+      "prod": "https://illustration.iil.pet",
+      "staging": "https://staging-illustration.iil.pet",
+      "dev": "http://localhost:8096"
+    }
+  },
+  {
+    "name": "Learn Hub",
+    "repo": "learn-hub",
+    "desc": "Lernplattform mit KI-Tutor, Kursmanagement und adaptivem Learning-Path-System.",
+    "icon": "graduation",
+    "color": { "bg": "rgba(56,189,248,0.12)", "fg": "#38bdf8" },
+    "tags": ["Education", "AI Tutor"],
+    "status": "dev",
+    "urls": {
+      "prod": "https://learn.iil.pet",
+      "staging": "https://staging-learn.iil.pet",
+      "dev": "http://localhost:8100"
+    }
+  },
+  {
+    "name": "Tax Hub",
+    "repo": "tax-hub",
+    "desc": "Steuerberatungs-Assistent: Dokumentenanalyse, Fristen-Tracking und Steueroptimierung.",
+    "icon": "calculator",
+    "color": { "bg": "rgba(148,163,184,0.12)", "fg": "#94a3b8" },
+    "tags": ["Finance", "Compliance"],
+    "status": "dev",
+    "urls": {
+      "prod": "https://tax.iil.pet",
+      "staging": "https://staging-tax.iil.pet",
+      "dev": "http://localhost:8099"
+    }
+  },
+  {
+    "name": "Recruiting Hub",
+    "repo": "recruiting-hub",
+    "desc": "KI-gestütztes Recruiting: Stellenausschreibungen, Bewerber-Matching und Interview-Scheduling.",
+    "icon": "users",
+    "color": { "bg": "rgba(99,102,241,0.12)", "fg": "#6366f1" },
+    "tags": ["HR", "Recruiting"],
+    "status": "dev",
+    "urls": {
+      "prod": "https://hr.iil.pet",
+      "staging": "https://staging-hr.iil.pet",
+      "dev": "http://localhost:8103"
+    }
+  },
+  {
+    "name": "DMS Hub",
+    "repo": "dms-hub",
+    "desc": "Dokumentenmanagement-System mit OCR, Volltextsuche und automatischer Klassifikation.",
+    "icon": "archive",
+    "color": { "bg": "rgba(120,113,108,0.12)", "fg": "#78716c" },
+    "tags": ["DMS", "OCR"],
+    "status": "dev",
+    "urls": {
+      "prod": "https://dms.iil.pet",
+      "staging": "https://staging-dms.iil.pet",
+      "dev": "http://localhost:8107"
+    }
+  },
+  {
+    "name": "Doc Hub",
+    "repo": "doc-hub",
+    "desc": "Plattform-Dokumentation: API-Referenz, Architektur-Guides und Onboarding-Docs.",
+    "icon": "file",
+    "color": { "bg": "rgba(163,163,163,0.12)", "fg": "#a3a3a3" },
+    "tags": ["Docs", "Internal"],
+    "status": "dev",
+    "urls": {
+      "prod": "https://docs.iil.pet",
+      "staging": "https://staging-docs.iil.pet",
+      "dev": "http://localhost:8102"
+    }
+  },
+  {
+    "name": "Dev Hub",
+    "repo": "dev-hub",
+    "desc": "Developer-Portal: CI/CD-Dashboard, Deployment-Status und Plattform-Monitoring.",
+    "icon": "code",
+    "color": { "bg": "rgba(45,212,191,0.12)", "fg": "#2dd4bf" },
+    "tags": ["DevOps", "Internal"],
+    "status": "dev",
+    "urls": {
+      "prod": "https://dev-hub.iil.pet",
+      "staging": "https://staging-devhub.iil.pet",
+      "dev": "http://localhost:8085"
+    }
+  },
+  {
+    "name": "Odoo – ERP",
+    "repo": "odoo-hub",
+    "desc": "Enterprise Resource Planning: CRM, Buchhaltung, Lagerverwaltung und Prozessautomation.",
+    "icon": "grid",
+    "color": { "bg": "rgba(124,58,237,0.12)", "fg": "#7c3aed" },
+    "tags": ["ERP", "Odoo 18"],
+    "status": "beta",
+    "urls": {
+      "prod": "https://odoo.iil.pet",
+      "staging": "https://staging-odoo.iil.pet",
+      "dev": "http://localhost:8069"
+    }
   }
 ]

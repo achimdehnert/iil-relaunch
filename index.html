@@ -8,6 +8,7 @@
   <meta name="description"
     content="IIL GmbH – Ihr kompetenter Partner für KI-Strategie, Prozessoptimierung, digitale Transformation und Innovationsberatung. Jetzt die AI-Plattform entdecken." />
   <meta name="robots" content="index, follow" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%233b82f6'/><text x='16' y='22' font-family='Inter,system-ui,sans-serif' font-size='16' font-weight='700' fill='white' text-anchor='middle'>IIL</text></svg>" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -224,9 +225,57 @@
       gap: 0.75rem;
     }
 
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 10000;
+    }
+
     @media (max-width: 768px) {
+      .nav-hamburger {
+        display: flex;
+        align-items: center;
+      }
+
       .nav-links {
         display: none;
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #060912;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        z-index: 9999;
+        padding: 0;
+        list-style: none;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        font-size: 1.25rem;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-cta.mobile-visible {
+        display: block;
+        position: fixed;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 101;
       }
 
       nav {
@@ -551,8 +600,8 @@
 
     .app-footer {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: 0.6rem;
       padding-top: 0.75rem;
       border-top: 1px solid var(--border);
     }
@@ -574,18 +623,53 @@
       color: var(--muted);
     }
 
-    .app-link {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--blue);
+    .env-links {
       display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      transition: var(--transition);
+      gap: 0.35rem;
+      flex-wrap: wrap;
     }
 
-    .app-link:hover {
-      color: var(--cyan);
+    .env-btn {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.25em 0.6em;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .env-prod {
+      color: #22c55e;
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.25);
+    }
+    .env-prod:hover { background: rgba(34,197,94,0.25); }
+
+    .env-staging {
+      color: #f59e0b;
+      background: rgba(245,158,11,0.1);
+      border: 1px solid rgba(245,158,11,0.25);
+    }
+    .env-staging:hover { background: rgba(245,158,11,0.25); }
+
+    .env-dev {
+      color: #ef4444;
+      background: rgba(239,68,68,0.1);
+      border: 1px solid rgba(239,68,68,0.25);
+    }
+    .env-dev:hover { background: rgba(239,68,68,0.25); }
+
+    .env-repo {
+      color: var(--muted);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .env-repo:hover { color: var(--text); background: rgba(255,255,255,0.12);
     }
 
     .app-link svg {
@@ -913,7 +997,7 @@
       <div class="logo-badge">IIL</div>
       IIL GmbH
     </a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-links">
       <li><a href="#leistungen">Leistungen</a></li>
       <li><a href="#plattform">Plattform</a></li>
       <li><a href="#ueber-uns">Über uns</a></li>
@@ -922,6 +1006,11 @@
     <div class="nav-cta">
       <a href="#kontakt" class="btn btn-primary">Beratung anfragen</a>
     </div>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menü öffnen">
+      <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
   </nav>
 
   <!-- ═══════════════════════════════════════════════════════════ HERO -->
@@ -1378,8 +1467,8 @@
           IIL Privates Institut für Informationslogistik GmbH
         </div>
         <ul class="footer-links">
-          <li><a href="/impressum">Impressum</a></li>
-          <li><a href="/datenschutz">Datenschutzerklärung</a></li>
+          <li><a href="/impressum.html">Impressum</a></li>
+          <li><a href="/datenschutz.html">Datenschutzerklärung</a></li>
           <li><a href="https://iil.pet" target="_blank">Platform Hub</a></li>
         </ul>
         <div class="footer-copy">© 2026 IIL – Institut für Informationslogistik · Neu-Ulm</div>
@@ -1389,6 +1478,40 @@
 
   <!-- ═══════════════════════════════════════════════════════════ JS -->
   <script>
+    /* ─── SVG Icon Map ─────────────────────────────────────────── */
+    const ICON_SVG = {
+      shield:    '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+      book:      '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>',
+      plane:     '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.4-.1.9.3 1.1l5.6 3.2-3.5 3.5-2.2-.7c-.4-.1-.8 0-1 .3l-.2.3c-.2.3-.1.7.2.9l3.3 2.2 2.2 3.3c.2.3.6.4.9.2l.3-.2c.3-.2.4-.6.3-1l-.7-2.2 3.5-3.5 3.2 5.6c.2.4.7.5 1.1.3l.5-.3c.4-.2.6-.6.5-1.1z"/></svg>',
+      globe:     '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>',
+      chart:     '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>',
+      clipboard: '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>',
+      cog:       '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>',
+      trending:  '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>',
+      beaker:    '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6M10 3v6.5L4.2 18.4A1.5 1.5 0 005.5 21h13a1.5 1.5 0 001.3-2.6L14 9.5V3"/><path d="M8.5 14h7"/></svg>',
+      pen:       '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>',
+      brain:     '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M12 2a5 5 0 014.8 3.6A4 4 0 0120 9.5a4.5 4.5 0 01-1.5 8.3A5 5 0 0112 22a5 5 0 01-6.5-4.2A4.5 4.5 0 014 9.5a4 4 0 013.2-3.9A5 5 0 0112 2z"/><path d="M12 2v20"/></svg>',
+      heart:     '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>',
+      dollar:    '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>',
+      palette:   '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.3-.5-.8-.5-1.2 0-1.1.9-2 2-2h2.4c3 0 5.6-2.5 5.6-5.6C22 5.6 17.9 2 12 2z"/><circle cx="7.5" cy="11.5" r="1.5" fill="currentColor"/><circle cx="10.5" cy="7.5" r="1.5" fill="currentColor"/><circle cx="15.5" cy="7.5" r="1.5" fill="currentColor"/><circle cx="17.5" cy="11.5" r="1.5" fill="currentColor"/></svg>',
+      graduation:'<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M22 10l-10-6L2 10l10 6 10-6z"/><path d="M6 12v5c0 2 2.7 4 6 4s6-2 6-4v-5"/><line x1="22" y1="10" x2="22" y2="16"/></svg>',
+      calculator:'<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8v4H8z"/><circle cx="8" cy="14" r="0.5" fill="currentColor"/><circle cx="12" cy="14" r="0.5" fill="currentColor"/><circle cx="16" cy="14" r="0.5" fill="currentColor"/><circle cx="8" cy="18" r="0.5" fill="currentColor"/><circle cx="12" cy="18" r="0.5" fill="currentColor"/><circle cx="16" cy="18" r="0.5" fill="currentColor"/></svg>',
+      users:     '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>',
+      archive:   '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>',
+      file:      '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>',
+      code:      '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
+      grid:      '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>',
+    };
+    function getIconSvg(name) { return ICON_SVG[name] || `<span style="font-size:1.1rem;font-weight:700;">${name.charAt(0).toUpperCase()}</span>`; }
+
+    /* ─── Environment detection ──────────────────────────────── */
+    const PAGE_ENV = (() => {
+      const h = location.hostname;
+      if (h === 'localhost' || h === '127.0.0.1') return 'dev';
+      if (h.startsWith('staging')) return 'staging';
+      return 'prod';
+    })();
+
     /* ─── Status badge config ─────────────────────────────────── */
     const STATUS_CONFIG = {
       live:  { label: 'Live',          color: '#22c55e', bg: 'rgba(34,197,94,0.12)' },
@@ -1397,16 +1520,25 @@
     };
 
     function renderApp(app) {
-      const isLive = app.status === 'live';
+      const isActive = app.status !== 'dev';
       const sc = STATUS_CONFIG[app.status] || STATUS_CONFIG.dev;
       const badge = `<span style="font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
         color:${sc.color};background:${sc.bg};border:1px solid ${sc.color}33;
         padding:0.2em 0.6em;border-radius:100px;">${sc.label}</span>`;
 
-      const inner = `
+      const urls = app.urls || {};
+      let envBtns = '';
+      if (urls.prod)    envBtns += `<a href="${urls.prod}" target="_blank" rel="noopener" class="env-btn env-prod">Prod</a>`;
+      if (urls.staging) envBtns += `<a href="${urls.staging}" target="_blank" rel="noopener" class="env-btn env-staging">Staged</a>`;
+      if (PAGE_ENV === 'dev' && urls.dev) envBtns += `<a href="${urls.dev}" target="_blank" rel="noopener" class="env-btn env-dev">Dev</a>`;
+
+      const repoLink = app.repo ? `<a href="https://github.com/achimdehnert/${app.repo}" target="_blank" rel="noopener" class="env-btn env-repo" title="GitHub Repo">
+        <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></a>` : '';
+
+      return `<div class="app-card reveal" style="--accent-color:${app.color.fg};${!isActive ? 'opacity:0.65;' : ''}">
     <div class="app-card-head">
-      <div class="app-icon" style="background:${app.color.bg};color:${app.color.fg};${!isLive ? 'opacity:0.6;filter:grayscale(40%)' : ''}">${app.icon || '●'}</div>
-      <h3 style="${!isLive ? 'color:var(--muted)' : ''}">${app.name}</h3>
+      <div class="app-icon" style="background:${app.color.bg};color:${app.color.fg};${!isActive ? 'filter:grayscale(40%)' : ''}">${getIconSvg(app.icon)}</div>
+      <h3 style="${!isActive ? 'color:var(--muted)' : ''}">${app.name}</h3>
     </div>
     <p class="app-desc">${app.desc}</p>
     <div class="app-footer">
@@ -1414,28 +1546,22 @@
         ${app.tags.map(t => `<span class="app-tag">${t}</span>`).join('')}
         ${badge}
       </div>
-      ${isLive ? `<span class="app-link">Entdecken<svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M13 7l5 5-5 5M6 12h12"/></svg></span>` : ''}
-    </div>`;
-
-      if (isLive) {
-        return `<a href="${app.url}" target="_blank" rel="noopener" class="app-card reveal" style="--accent-color:${app.color.fg}">${inner}</a>`;
-      } else {
-        return `<div class="app-card reveal" style="--accent-color:${app.color.fg};opacity:0.75;cursor:default;">${inner}</div>`;
-      }
+      <div class="env-links">${envBtns}${repoLink}</div>
+    </div>
+  </div>`;
     }
 
     function renderApps(apps) {
-      const live = apps.filter(a => a.status === 'live');
-      const pipeline = apps.filter(a => a.status !== 'live');
+      const active = apps.filter(a => a.status === 'live' || a.status === 'beta');
+      const pipeline = apps.filter(a => a.status === 'dev');
 
-      if (live.length > 0) {
+      if (active.length > 0) {
         document.getElementById('live-section').style.display = 'block';
-        document.getElementById('live-grid').innerHTML = live.map(renderApp).join('');
+        document.getElementById('live-grid').innerHTML = active.map(renderApp).join('');
       }
 
       if (pipeline.length > 0) {
-        /* hide divider label if no live section above */
-        if (live.length === 0) {
+        if (active.length === 0) {
           document.getElementById('dev-divider').style.display = 'none';
         }
         document.getElementById('dev-grid').innerHTML = pipeline.map(renderApp).join('');
@@ -1446,7 +1572,7 @@
     }
 
     /* ─── Load apps.json ──────────────────────────────────────── */
-    fetch('/apps.json')
+    fetch('/apps.json?v=' + Date.now())
       .then(r => r.json())
       .then(renderApps)
       .catch(() => {
@@ -1473,6 +1599,39 @@
 
     /* observe static .reveal elements (non-app-grid) */
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    /* ─── Environment Banner ─────────────────────────────────── */
+    (function() {
+      const h = location.hostname;
+      const p = location.port;
+      let env = null;
+      if (h === 'localhost' || h === '127.0.0.1') {
+        if (p === '9001') env = { label: 'STAGED', color: '#f59e0b' };
+        else env = { label: 'DEV', color: '#ef4444' };
+      }
+      if (env) {
+        const b = document.createElement('div');
+        b.style.cssText = `position:fixed;bottom:0;left:0;right:0;z-index:99999;background:${env.color};color:#fff;text-align:center;padding:4px 0;font:700 12px/1 system-ui;letter-spacing:0.1em;`;
+        b.textContent = `${env.label}  ·  ${location.host}`;
+        document.body.appendChild(b);
+      }
+    })();
+
+    /* ─── Mobile Hamburger Toggle ──────────────────────────────── */
+    const hamburger = document.getElementById('nav-hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      hamburger.innerHTML = isOpen
+        ? '<svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>'
+        : '<svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>';
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.innerHTML = '<svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>';
+      });
+    });
   </script>
 </body>
 
