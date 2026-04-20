@@ -9,7 +9,7 @@
     "status": "beta",
     "urls": {
       "prod": "https://schutztat.de",
-      "staging": "https://staging.schutztat.de",
+      "staging": "https://staging-riskhub.iil.pet",
       "dev": "http://localhost:8090"
     }
   },
@@ -37,7 +37,7 @@
     "status": "beta",
     "urls": {
       "prod": "https://drifttales.com",
-      "staging": "https://staging.drifttales.com",
+      "staging": "https://staging-travel.iil.pet",
       "dev": "http://localhost:8089"
     }
   },
@@ -51,7 +51,7 @@
     "status": "beta",
     "urls": {
       "prod": "https://weltenforger.com",
-      "staging": "https://staging.weltenforger.com",
+      "staging": "https://staging-weltenhub.iil.pet",
       "dev": "http://localhost:8081"
     }
   },
@@ -65,7 +65,7 @@
     "status": "beta",
     "urls": {
       "prod": "https://prezimo.de",
-      "staging": "https://staging.prezimo.de",
+      "staging": "https://staging-pptx.iil.pet",
       "dev": "http://localhost:8020"
     }
   },
@@ -79,7 +79,7 @@
     "status": "beta",
     "urls": {
       "prod": "https://bieterpilot.de",
-      "staging": "https://staging.bieterpilot.de",
+      "staging": "https://staging-ausschreibungs.iil.pet",
       "dev": "http://localhost:8101"
     }
   },
@@ -93,7 +93,7 @@
     "status": "beta",
     "urls": {
       "prod": "https://nl2cad.de",
-      "staging": "https://staging.nl2cad.de",
+      "staging": "https://staging-cad.iil.pet",
       "dev": "http://localhost:8094"
     }
   },
@@ -107,7 +107,7 @@
     "status": "beta",
     "urls": {
       "prod": "https://trading-hub.iil.pet",
-      "staging": "https://staging.ai-trades.de",
+      "staging": "https://staging-trading.iil.pet",
       "dev": "http://localhost:8088"
     }
   },
@@ -163,7 +163,7 @@
     "status": "beta",
     "urls": {
       "prod": "https://137herz.ai",
-      "staging": "https://staging.137herz.ai",
+      "staging": "https://staging-137herz.iil.pet",
       "dev": "http://localhost:8095"
     }
   },
